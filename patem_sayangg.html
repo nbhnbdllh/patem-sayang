@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patem Sayangg — The Story of Us</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#0B090A',
+                        burgundy: '#2B0B14',
+                        wine: '#58111A',
+                        blush: '#F4ACB7',
+                        ivory: '#FFF8F0',
+                        gold: '#D4AF37',
+                        goldlight: '#F3E5AB',
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        editorial: ['Playfair Display', 'serif'],
+                    },
+                    keyframes: {
+                        floatSlow: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(3deg)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4' },
+                            '50%': { opacity: '0.8' }
+                        },
+                        spinSlow: {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' }
+                        }
+                    },
+                    animation: {
+                        'float-slow': 'floatSlow 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                        'spin-slow': 'spinSlow 20s linear infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar and ambient styles */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B090A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #58111A;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+        
+        .glass-panel {
+            background: rgba(43, 11, 20, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-header {
+            background: rgba(11, 9, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #FFF8F0 0%, #D4AF37 50%, #F3E5AB 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-rose {
+            background: linear-gradient(135deg, #FFF8F0 0%, #F4ACB7 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Particle effect background */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .dropcap {
+            float: left;
+            font-size: 3.8rem;
+            line-height: 0.8;
+            padding-top: 4px;
+            padding-right: 12px;
+            padding-bottom: 4px;
+            color: #D4AF37;
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+</head>
+<body class="bg-midnight text-ivory font-sans antialiased selection:bg-wine selection:text-goldlight overflow-x-hidden relative">
+
+    <!-- Canvas for Floating Ambient Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Global Audio Element -->
+    <audio id="main-audio" preload="metadata">
+        <source src="audio/Sal_Priadi_-_Kita_usahakan_rumah_itu_(mp3.pm).mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung pemutaran audio.
+    </audio>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 1: CINEMATIC INTRO / OVERLAY HERO -->
+    <!-- ========================================================================= -->
+    <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center p-6 z-20 transition-opacity duration-1000">
+        <!-- Ambient Radial Glows -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-wine/30 rounded-full blur-[100px] pointer-events-none animate-pulse-glow"></div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 w-[250px] sm:w-[450px] h-[250px] sm:h-[450px] bg-burgundy/40 rounded-full blur-[90px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto space-y-6">
+            <span class="inline-block text-xs sm:text-sm uppercase tracking-[0.3em] text-gold/80 font-medium px-4 py-1.5 rounded-full border border-gold/20 bg-burgundy/30">
+                A Story Written With Love
+            </span>
+
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-serif text-gradient-gold tracking-tight font-normal leading-none pt-2">
+                Patem Sayangg
+            </h1>
+
+            <p class="text-lg sm:text-2xl font-serif italic text-blush/90 max-w-2xl mx-auto leading-relaxed">
+                "Sebuah ruang kecil yang dirancang untuk menyimpan setiap hembusan rasa, ucapan syukur, dan janji kita."
+            </p>
+
+            <div class="flex items-center justify-center gap-3 text-xs sm:text-sm tracking-widest text-ivory/60 font-light pt-2">
+                <span>10 SEPTEMBER 2025</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-gold/60"></span>
+                <span>SELAMANYA</span>
+            </div>
+
+            <div class="pt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button id="btn-enter-story" onclick="enterExperience()" class="group relative px-8 py-4 rounded-full bg-gradient-to-r from-wine to-burgundy border border-gold/40 text-ivory font-medium tracking-wide shadow-2xl hover:shadow-gold/20 hover:border-gold transition-all duration-300 flex items-center gap-3">
+                    <i class="fa-solid fa-heart text-blush text-sm group-hover:scale-125 transition-transform"></i>
+                    <span>Masuk ke Cerita Kita</span>
+                    <i class="fa-solid fa-arrow-right text-xs opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center text-xs text-ivory/40 space-y-2">
+            <p>Saran: Gunakan earphone untuk pengalaman emosional yang utuh</p>
+            <i class="fa-solid fa-chevron-down animate-bounce text-gold/50"></i>
+        </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION 2: STICKY TRANSLUCENT NAVIGATION BAR -->
+    <!-- ========================================================================= -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 glass-header transition-transform duration-500 -translate-y-full">
+        <!-- Progress Bar -->
+        <div id="scroll-progress" class="h-[2px] bg-gradient-to-r from-blush via-gold to-wine w-0 transition-all duration-150"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#hero" class="font-serif text-xl sm:text-2xl text-gradient-gold font-bold tracking-tight">
+                P & A
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-6 text-xs xl:text-sm tracking-wider uppercase text-ivory/80 font-medium">
+                <a href="#surat" class="hover:text-gold transition-colors">Surat</a>
+                <a href="#perjalanan" class="hover:text-gold transition-colors">Perjalanan</a>
+                <a href="#galeri" class="hover:text-gold transition-colors">Galeri</a>
+                <a href="#lagu" class="hover:text-gold transition-colors">Lagu Kita</a>
+                <a href="#alasan" class="hover:text-gold transition-colors">Alasan</a>
+                <a href="#interaktif" class="hover:text-gold transition-colors">Love Hub</a>
+                <a href="#kejutan" class="hover:text-gold transition-colors">Kejutan</a>
+            </nav>
+
+            <!-- Quick Controls -->
+            <div class="flex items-center gap-3">
+                <!-- Audio Quick Toggle -->
+                <button id="nav-audio-btn" onclick="toggleAudio()" class="flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-gold/30 text-xs text-gold hover:bg-wine/40 transition-all" title="Putar/Jeda Musik">
+                    <i id="nav-audio-icon" class="fa-solid fa-music"></i>
+                    <span id="nav-audio-text" class="hidden sm:inline">Putar Musik</span>
+                </button>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-ivory focus:outline-none" aria-label="Buka Menu">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-b border-gold/20 px-6 py-4 space-y-3 text-sm text-center">
+            <a href="#surat" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold">Surat Untukmu</a>
+            <a href="#perjalanan" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold">Perjalanan Kita</a>
+            <a href="#galeri" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold">Galeri Kenangan</a>
+            <a href="#lagu" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold">Lagu Kita</a>
+            <a href="#alasan" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold">Alasan Menyukai</a>
+            <a href="#interaktif" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold">Ruang Interaktif</a>
+            <a href="#kejutan" onclick="toggleMobileMenu()" class="block py-1 hover:text-gold">Kejutan Terakhir</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="relative z-10 space-y-24 sm:space-y-36 pb-24">
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 3: SURAT CINTA UTAMA (EDITORIAL LETTER) -->
+        <!-- ========================================================================= -->
+        <section id="surat" class="max-w-4xl mx-auto px-4 sm:px-6 pt-12">
+            <div class="glass-panel rounded-3xl p-6 sm:p-12 relative overflow-hidden shadow-2xl border border-gold/20">
+                <!-- Background Accent Watermark -->
+                <i class="fa-solid fa-quote-right absolute -right-6 -bottom-6 text-9xl text-wine/10 pointer-events-none"></i>
+
+                <div class="flex items-center justify-between border-b border-gold/20 pb-4 mb-8 text-xs sm:text-sm text-gold/80 font-mono">
+                    <span>SURAT UNTUK PATEM SAYANGG</span>
+                    <span>SURAT #01 — Edisi Abadi</span>
+                </div>
+
+                <h2 class="text-3xl sm:text-5xl font-serif text-gradient-gold mb-8 leading-tight">
+                    Untuk kamu, yang selalu punya tempat istimewa di hati aku.
+                </h2>
+
+                <div class="space-y-6 text-ivory/90 font-serif text-base sm:text-lg sm:leading-relaxed text-justify">
+                    <p>
+                        <span class="dropcap">H</span>ai, Patem Sayangg... Ketika aku menulis setiap patah kata di halaman digital ini, suasana terasa begitu tenang. Aku sengaja merancang tempat ini dari nol bukan sebagai pajangan visual belaka, melainkan sebagai monumen kecil atas kehadiranmu dalam hidup aku. Sesuatu yang mewah, tenang, dan dapat kamu buka kapan pun kamu butuh kepastian tentang betapa berharganya kamu bagi aku.
+                    </p>
+                    <p>
+                        Sejak awal perjalanan kita pada tanggal 10 September 2025, aku belajar banyak hal tentang arti kebersamaan yang sesungguhnya. Cinta tidak selalu berupa kembang api yang megah atau perayaan yang riuh; cinta sering kali hadir dalam hening yang paling nyaman. Dalam senyum tipismu saat kamu lelah, dalam obrolan sederhana sebelum kita terlelap, dan dalam cara kamu mendengarkan cerita aku tanpa pernah menghakimi.
+                    </p>
+                    <p>
+                        Aku bersyukur atas setiap inci proses yang kita lewati. Hubungan kita tentu tidak selalu mulus tanpa keraguan, tetapi di sanalah letak keindahannya. Kita memilih untuk saling mendengarkan, belajar memahami sudut pandang masing-masing, dan tidak pernah membiarkan ego merusak apa yang sudah kita bangun dengan payah dan cinta.
+                    </p>
+                    <p>
+                        Terima kasih sudah menjadi sosok yang selalu hangat, sabar, dan penuh dengan kebaikan yang tulus. Kamu mengajarkan aku bahwa rumah bukanlah sekadar alamat atau bangunan berdinding kokoh, melainkan sebuah rasa aman yang aku rasakan setiap kali mengingat namamu atau menggenggam jemarimu.
+                    </p>
+                    <p>
+                        Aku ingin kita terus tumbuh bersama bukan sebagai dua orang yang sempurna, melainkan sebagai dua manusia yang saling menguatkan di saat sulit, saling merayakan saat bahagia, dan tidak pernah berhenti mengusahakan satu sama lain. Apapun babak hidup yang akan datang nanti, aku ingin melewatinya bersamamu.
+                    </p>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-gold/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="text-sm font-sans text-ivory/60">
+                        <p class="font-medium text-blush">Ditulis dengan ketulusan penuh,</p>
+                        <p>Jakarta, Indonesia</p>
+                    </div>
+                    <div class="text-right font-serif">
+                        <p class="text-xs tracking-widest text-gold uppercase">Dengan sayang,</p>
+                        <p class="text-2xl text-gradient-gold font-bold">Dari aku ♡</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 4: PERJALANAN HUBUNGAN & LIVE TIMER COUNTER -->
+        <!-- ========================================================================= -->
+        <section id="perjalanan" class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold">Waktu Berjalan Mengukir Jejak</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-gradient-gold">Perjalanan Kita</h2>
+                <p class="text-sm sm:text-base text-blush/80 font-serif italic max-w-xl mx-auto">
+                    Setiap detik sejak 10 September 2025 adalah detik yang berharga dan tidak pernah aku sesali.
+                </p>
+            </div>
+
+            <!-- Live Counter Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 mb-16">
+                <div class="glass-panel p-6 rounded-2xl text-center border border-gold/20 shadow-lg">
+                    <span id="counter-days" class="text-4xl sm:text-6xl font-serif text-gold font-bold block">0</span>
+                    <span class="text-xs uppercase tracking-wider text-ivory/60 mt-2 block">Hari</span>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border border-gold/20 shadow-lg">
+                    <span id="counter-hours" class="text-4xl sm:text-6xl font-serif text-gold font-bold block">0</span>
+                    <span class="text-xs uppercase tracking-wider text-ivory/60 mt-2 block">Jam</span>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border border-gold/20 shadow-lg">
+                    <span id="counter-minutes" class="text-4xl sm:text-6xl font-serif text-gold font-bold block">0</span>
+                    <span class="text-xs uppercase tracking-wider text-ivory/60 mt-2 block">Menit</span>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border border-gold/20 shadow-lg">
+                    <span id="counter-seconds" class="text-4xl sm:text-6xl font-serif text-blush font-bold block">0</span>
+                    <span class="text-xs uppercase tracking-wider text-ivory/60 mt-2 block">Detik</span>
+                </div>
+            </div>
+
+            <!-- Relationship Timeline Chapters -->
+            <div class="relative border-l-2 border-gold/30 ml-4 sm:ml-32 space-y-12">
+                <!-- Bab 1 -->
+                <div class="relative pl-6 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gold border-4 border-midnight group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-gold/80 block mb-1">BAB I — 10 SEPTEMBER 2025</span>
+                    <h3 class="text-xl sm:text-2xl font-serif text-ivory font-semibold mb-2">Awal Cerita & Pertemuan Rasa</h3>
+                    <p class="text-sm sm:text-base text-ivory/70 leading-relaxed max-w-2xl font-serif">
+                        Hari pertama ketika kisah kita resmi dimulai. Momen di mana dua arah takdir bertemu, membawa kecanggokan manis yang kemudian berubah menjadi rasa nyaman yang mendalam.
+                    </p>
+                </div>
+
+                <!-- Bab 2 -->
+                <div class="relative pl-6 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-wine border-4 border-midnight group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-gold/80 block mb-1">BAB II — HARI-HARI PERTAMA</span>
+                    <h3 class="text-xl sm:text-2xl font-serif text-ivory font-semibold mb-2">Hal-Hal Kecil yang Berarti</h3>
+                    <p class="text-sm sm:text-base text-ivory/70 leading-relaxed max-w-2xl font-serif">
+                        Mulai saling mengenal kebiasaan, cerita masa lalu, lagu favorit, hingga lelucon kecil yang hanya kita berdua yang mengerti. Setiap pesan singkat terasa menentramkan.
+                    </p>
+                </div>
+
+                <!-- Bab 3 -->
+                <div class="relative pl-6 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blush border-4 border-midnight group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-gold/80 block mb-1">BAB III — PROSES BELAJAR</span>
+                    <h3 class="text-xl sm:text-2xl font-serif text-ivory font-semibold mb-2">Hari-Hari yang Mengajarkan Kita</h3>
+                    <p class="text-sm sm:text-base text-ivory/70 leading-relaxed max-w-2xl font-serif">
+                        Belajar mengerti ketika salah satu sedang lelah, memberi ruang saat dibutuhkan, dan mempererat komunikasi jujur. Kita paham bahwa keharmonisan adalah hasil perjuangan dua arah.
+                    </p>
+                </div>
+
+                <!-- Bab 4 -->
+                <div class="relative pl-6 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gold border-4 border-midnight group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-gold/80 block mb-1">BAB IV — KOMITMEN KITA</span>
+                    <h3 class="text-xl sm:text-2xl font-serif text-ivory font-semibold mb-2">Hal yang Ingin Kita Jaga</h3>
+                    <p class="text-sm sm:text-base text-ivory/70 leading-relaxed max-w-2xl font-serif">
+                        Menjaga kejujuran, kehangatan, dan rasa hormat satu sama lain. Tidak membiarkan jarak atau kesibukan mengikis ikatan yang sudah dibangun dengan ketulusan.
+                    </p>
+                </div>
+
+                <!-- Bab 5 -->
+                <div class="relative pl-6 sm:pl-10 group">
+                    <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-wine border-4 border-midnight group-hover:scale-125 transition-transform"></div>
+                    <span class="text-xs font-mono text-gold/80 block mb-1">BAB V — HARI INI & MASA DEPAN</span>
+                    <h3 class="text-xl sm:text-2xl font-serif text-ivory font-semibold mb-2">Cerita yang Masih Berlanjut</h3>
+                    <p class="text-sm sm:text-base text-ivory/70 leading-relaxed max-w-2xl font-serif">
+                        Setiap hari adalah lembaran baru yang ingin aku tulis bersamamu. Masih banyak mimpi kecil dan petualangan yang menunggu untuk kita selesaikan bergandengan tangan.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 5: GALERI KENANGAN EDITORIAL -->
+        <!-- ========================================================================= -->
+        <section id="galeri" class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold">Arsip Visual</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-gradient-gold">Galeri Kenangan</h2>
+                <p class="text-sm sm:text-base text-blush/80 font-serif italic max-w-xl mx-auto">
+                    Momen-momen yang terekam kamera dan tersimpan selamanya dalam ingatan.
+                </p>
+            </div>
+
+            <!-- Gallery Grid with Image Fallbacks -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Photo Card 1 -->
+                <div onclick="openLightbox('img/foto1.jpg', 'Satu momen manis yang selalu membuatku tersenyum.')" class="group glass-panel rounded-2xl overflow-hidden border border-gold/20 cursor-pointer hover:border-gold transition-all duration-300">
+                    <div class="relative aspect-4/5 overflow-hidden bg-burgundy/40">
+                        <img src="img/foto1.jpg" alt="Momen Kita 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x750/2B0B14/D4AF37?text=Momen+Manis+Kita+1';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-4">
+                        <p class="font-serif text-sm text-ivory/90 italic">"Satu momen manis yang selalu membuatku tersenyum."</p>
+                    </div>
+                </div>
+
+                <!-- Photo Card 2 -->
+                <div onclick="openLightbox('img/foto2.jpg', 'Hari biasa yang terasa sangat istimewa bersamamu.')" class="group glass-panel rounded-2xl overflow-hidden border border-gold/20 cursor-pointer hover:border-gold transition-all duration-300">
+                    <div class="relative aspect-4/5 overflow-hidden bg-burgundy/40">
+                        <img src="img/foto2.jpg" alt="Momen Kita 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x750/2B0B14/D4AF37?text=Hari+Istimewa+Kita+2';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-4">
+                        <p class="font-serif text-sm text-ivory/90 italic">"Hari biasa yang terasa sangat istimewa bersamamu."</p>
+                    </div>
+                </div>
+
+                <!-- Photo Card 3 -->
+                <div onclick="openLightbox('img/foto3.jpg', 'Tawa kamu, pemandangan favorit aku.')" class="group glass-panel rounded-2xl overflow-hidden border border-gold/20 cursor-pointer hover:border-gold transition-all duration-300">
+                    <div class="relative aspect-4/5 overflow-hidden bg-burgundy/40">
+                        <img src="img/foto3.jpg" alt="Momen Kita 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x750/2B0B14/D4AF37?text=Tawa+Dan+Keceriaan+3';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-4">
+                        <p class="font-serif text-sm text-ivory/90 italic">"Tawa kamu, pemandangan favorit aku."</p>
+                    </div>
+                </div>
+
+                <!-- Photo Card 4 -->
+                <div onclick="openLightbox('img/foto4.jpg', 'Satu lagi alasan untuk terus bersyukur.')" class="group glass-panel rounded-2xl overflow-hidden border border-gold/20 cursor-pointer hover:border-gold transition-all duration-300">
+                    <div class="relative aspect-4/5 overflow-hidden bg-burgundy/40">
+                        <img src="img/foto4.jpg" alt="Momen Kita 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x750/2B0B14/D4AF37?text=Rasa+Syukur+Kita+4';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-4">
+                        <p class="font-serif text-sm text-ivory/90 italic">"Satu lagi alasan untuk terus bersyukur."</p>
+                    </div>
+                </div>
+
+                <!-- Photo Card 5 -->
+                <div onclick="openLightbox('img/foto5.jpg', 'Menatap masa depan dengan hangat dan tenang.')" class="group glass-panel rounded-2xl overflow-hidden border border-gold/20 cursor-pointer hover:border-gold transition-all duration-300">
+                    <div class="relative aspect-4/5 overflow-hidden bg-burgundy/40">
+                        <img src="img/foto5.jpg" alt="Momen Kita 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x750/2B0B14/D4AF37?text=Tatapan+Masa+Depan+5';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-4">
+                        <p class="font-serif text-sm text-ivory/90 italic">"Menatap masa depan dengan hangat dan tenang."</p>
+                    </div>
+                </div>
+
+                <!-- Photo Card 6 -->
+                <div onclick="openLightbox('img/foto6.jpg', 'Genggaman tangan yang tak ingin aku lepaskan.')" class="group glass-panel rounded-2xl overflow-hidden border border-gold/20 cursor-pointer hover:border-gold transition-all duration-300">
+                    <div class="relative aspect-4/5 overflow-hidden bg-burgundy/40">
+                        <img src="img/foto6.jpg" alt="Momen Kita 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x750/2B0B14/D4AF37?text=Genggaman+Tangan+6';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-midnight/90 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+                    <div class="p-4">
+                        <p class="font-serif text-sm text-ivory/90 italic">"Genggaman tangan yang tak ingin aku lepaskan."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL -->
+        <div id="lightbox" class="fixed inset-0 z-50 bg-midnight/95 backdrop-blur-xl hidden flex flex-col justify-center items-center p-4">
+            <button onclick="closeLightbox()" class="absolute top-6 right-6 text-gold text-2xl hover:text-ivory focus:outline-none p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="max-w-3xl w-full text-center space-y-4">
+                <img id="lightbox-img" src="" alt="Zoom Photo" class="max-h-[75vh] mx-auto rounded-xl border border-gold/30 shadow-2xl object-contain">
+                <p id="lightbox-caption" class="font-serif text-lg text-blush italic"></p>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 6: SOUNDTRACK PLAYER SINEMATIK -->
+        <!-- ========================================================================= -->
+        <section id="lagu" class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-gold/20 shadow-2xl relative overflow-hidden">
+                <div class="text-center space-y-2 mb-8">
+                    <span class="text-xs uppercase tracking-widest text-gold font-semibold">Soundtrack Hubungan Kita</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif text-gradient-gold">Kita Usahakan Rumah Itu</h2>
+                    <p class="text-sm text-ivory/70 font-sans">Sal Priadi</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-center gap-8 my-6">
+                    <!-- Vinyl Record Disk Visual -->
+                    <div class="relative w-40 h-40 sm:w-48 sm:h-48 flex-shrink-0">
+                        <div id="vinyl-disk" class="w-full h-full rounded-full bg-gradient-to-tr from-neutral-900 via-neutral-800 to-black border-4 border-gold/30 shadow-2xl flex items-center justify-center relative">
+                            <div class="w-16 h-16 rounded-full bg-wine/80 border-2 border-gold/40 flex items-center justify-center text-gold text-xs font-serif text-center p-1">
+                                Sal Priadi
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-midnight absolute"></div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Player Controls & Progress -->
+                    <div class="w-full space-y-6">
+                        <!-- Progress Bar Container -->
+                        <div class="space-y-2">
+                            <div id="progress-container" onclick="seekAudio(event)" class="w-full h-2 bg-midnight/80 rounded-full cursor-pointer border border-gold/20 overflow-hidden relative">
+                                <div id="audio-progress-bar" class="h-full bg-gradient-to-r from-wine to-gold w-0"></div>
+                            </div>
+                            <div class="flex justify-between text-xs font-mono text-ivory/60">
+                                <span id="current-time">00:00</span>
+                                <span id="duration-time">--:--</span>
+                            </div>
+                        </div>
+
+                        <!-- Buttons Row -->
+                        <div class="flex items-center justify-center gap-6">
+                            <button onclick="rewindAudio()" class="text-gold/70 hover:text-gold text-xl transition-colors" title="Kembali ke Awal">
+                                <i class="fa-solid fa-backward-step"></i>
+                            </button>
+                            <button id="main-play-btn" onclick="toggleAudio()" class="w-14 h-14 rounded-full bg-gradient-to-r from-wine to-burgundy border border-gold text-gold flex items-center justify-center text-xl shadow-lg hover:scale-105 transition-transform">
+                                <i id="main-play-icon" class="fa-solid fa-play"></i>
+                            </button>
+                            <button onclick="forwardAudio()" class="text-gold/70 hover:text-gold text-xl transition-colors" title="Maju 10 Detik">
+                                <i class="fa-solid fa-forward-step"></i>
+                            </button>
+                        </div>
+
+                    
+                        <!-- Global Audio Element -->
+<audio id="main-audio" preload="metadata">
+    <source src="audio/Sal_Priadi_-_Kita_usahakan_rumah_itu_(mp3.pm).mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung pemutaran audio.
+</audio>
+                    </div>
+                </div>
+
+                <!-- Lyrics Preview / Snippet -->
+                <div class="mt-8 pt-6 border-t border-gold/15 text-center space-y-2">
+                    <p class="font-serif italic text-base sm:text-lg text-goldlight/90">
+                        "Kita usahakan rumah itu... Dari air mata, dari tawa yang mereda..."
+                    </p>
+                    <p class="text-xs text-ivory/50">Lagu ini selalu mengingatkan aku akan komitmen untuk membangun masa depan bersama.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 7: 20-30 ALASAN AKU MENYAYANGIMU -->
+        <!-- ========================================================================= -->
+        <section id="alasan" class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold">Catatan Ketulusan</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-gradient-gold">Alasan Aku Menyayangimu</h2>
+                <p class="text-sm sm:text-base text-blush/80 font-serif italic max-w-xl mx-auto">
+                    Dari sekian banyak alasan manis, ini adalah beberapa hal yang selalu membuat hati aku tersentuh.
+                </p>
+            </div>
+
+            <!-- Grid Alasan -->
+            <div id="reasons-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- 8 Alasan Pertama (Awal) -->
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#01</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Cara kamu tersenyum hangat saat menyapa aku setelah hari yang melelahkan.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#02</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Kesabaran kamu saat mendengarkan keluh kesah aku tanpa pernah memotong.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#03</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Ketulusan kamu dalam memperlakukan hal-hal kecil dengan penuh perhatian.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#04</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Cara kamu menatap aku yang selalu membuat aku merasa dihargai dan aman.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#05</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Keberanian kamu untuk jujur dan berbicara terbuka tentang perasaanmu.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#06</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Rasa humor kamu yang selalu berhasil mengusir suasana kaku.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#07</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Semangat kamu dalam mengejar impian dan hal-hal yang kamu cintai.</p>
+                </div>
+                <div class="glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#08</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Ketenangan yang kamu bawa setiap kali kita duduk berdua dalam hening.</p>
+                </div>
+
+                <!-- 16 Alasan Tambahan (Hidden via Tailwind initially) -->
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#09</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Cara kamu selalu mengingat detail kecil yang pernah aku ceritakan.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#10</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Sikap dewasa kamu saat kita menyelesaikan perbedaan pendapat.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#11</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Perhatian kecil seperti menanyakan apakah aku sudah makan atau istirahat.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#12</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Kebaikan hati kamu kepada orang-orang di sekitar kamu.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#13</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Cara kamu membuat hari yang biasa terasa seperti momen perayaan.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#14</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Suara kamu yang selalu menenangkan ketika aku sedang cemas.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#15</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Cara kamu menghargai setiap usaha yang aku lakukan untuk kita.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#16</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Kemauan kamu untuk terus tumbuh bersama menjadi pribadi yang lebih baik.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#17</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Ekspresi wajah kamu ketika sedang fokus menceritakan hal yang kamu suka.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#18</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Kehangatan pelukan kamu yang selalu terasa seperti tempat pulang.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#19</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Dukungan tulus yang kamu berikan saat aku sedang meragukan diri sendiri.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#20</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Cara kamu tersenyum saat kita saling memandang tanpa kata-kata.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#21</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Rasa percaya yang kamu titipkan penuh di dalam genggaman aku.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#22</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Kesederhanaan sikapmu yang membuat segalanya terasa mudah dan jujur.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#23</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Harapan dan mimpi-mimpi indah yang kita rangkai bersama untuk masa depan.</p>
+                </div>
+                <div class="more-reasons hidden glass-panel p-5 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all">
+                    <span class="text-xs font-mono text-gold/60 block mb-2">#24</span>
+                    <p class="font-serif text-sm text-ivory/90 leading-relaxed">Sebab menjadi dirimu sendiri sudah lebih dari cukup untuk membuat aku jatuh cinta setiap hari.</p>
+                </div>
+            </div>
+
+            <!-- Toggle Button -->
+            <div class="mt-8 text-center">
+                <button id="toggle-reasons-btn" onclick="toggleReasons()" class="px-6 py-3 rounded-full glass-panel border border-gold/30 text-gold text-sm font-medium hover:bg-wine/40 transition-all inline-flex items-center gap-2">
+                    <span>Masih Ada Alasan Lainnya</span>
+                    <i id="toggle-reasons-icon" class="fa-solid fa-chevron-down text-xs"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 8: RUANG INTERAKTIF LOVE HUB -->
+        <!-- ========================================================================= -->
+        <section id="interaktif" class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center space-y-3 mb-12">
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold">Interaksi Hangat</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-gradient-gold">Love Hub untuk Kamu</h2>
+                <p class="text-sm sm:text-base text-blush/80 font-serif italic max-w-xl mx-auto">
+                    Beberapa fitur kecil interaktif yang bisa kamu jelajahi kapan saja.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Interactive Module 1: Daily Message Generator -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-gold/20 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-gold">
+                            <i class="fa-solid fa-envelope-open-text text-xl"></i>
+                            <h3 class="font-serif text-xl font-semibold text-ivory">Pesan Hari Ini</h3>
+                        </div>
+                        <p class="text-xs text-ivory/60">Klik tombol di bawah untuk mengambil satu pesan kasih sayang acak hari ini.</p>
+                    </div>
+
+                    <div id="daily-message-box" class="p-4 rounded-xl bg-midnight/60 border border-gold/10 min-h-[100px] flex items-center justify-center text-center font-serif italic text-blush text-sm sm:text-base">
+                        "Klik tombol di bawah untuk membaca pesan hari ini..."
+                    </div>
+
+                    <button onclick="generateDailyMessage()" class="w-full py-3 rounded-full bg-wine/60 hover:bg-wine border border-gold/30 text-gold text-sm font-medium transition-all">
+                        <i class="fa-solid fa-dice-five mr-2"></i> Buka Pesan Baru
+                    </button>
+                </div>
+
+                <!-- Interactive Module 2: Mood Picker -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-gold/20 flex flex-col justify-between space-y-6">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-gold">
+                            <i class="fa-solid fa-[#F4ACB7] fa-heart-pulse text-xl text-blush"></i>
+                            <h3 class="font-serif text-xl font-semibold text-ivory">Pilih Suasana Hati</h3>
+                        </div>
+                        <p class="text-xs text-ivory/60">Bagaimana perasaanmu sekarang? Biarkan aku menyapamu.</p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="setMood('bahagia')" class="p-2 rounded-lg glass-panel text-xs text-ivory/80 hover:border-gold hover:text-gold transition-all">😊 Bahagia</button>
+                        <button onclick="setMood('lelah')" class="p-2 rounded-lg glass-panel text-xs text-ivory/80 hover:border-gold hover:text-gold transition-all">😴 Lelah</button>
+                        <button onclick="setMood('rindu')" class="p-2 rounded-lg glass-panel text-xs text-ivory/80 hover:border-gold hover:text-gold transition-all">🥺 Rindu</button>
+                        <button onclick="setMood('sedih')" class="p-2 rounded-lg glass-panel text-xs text-ivory/80 hover:border-gold hover:text-gold transition-all">🌧️ Sedih</button>
+                        <button onclick="setMood('semangat')" class="p-2 rounded-lg glass-panel text-xs text-ivory/80 hover:border-gold hover:text-gold transition-all">🔥 Semangat</button>
+                        <button onclick="setMood('butuh-peluk')" class="p-2 rounded-lg glass-panel text-xs text-ivory/80 hover:border-gold hover:text-gold transition-all">🤗 Peluk</button>
+                    </div>
+
+                    <div id="mood-response-box" class="p-4 rounded-xl bg-midnight/60 border border-gold/10 min-h-[80px] flex items-center justify-center text-center font-serif text-sm text-goldlight">
+                        Pilih salah satu kondisi di atas untuk mendengar responku.
+                    </div>
+                </div>
+
+                <!-- Interactive Module 3: Mini Romantic Quiz -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-gold/20 space-y-6 md:col-span-2">
+                    <div class="flex items-center justify-between border-b border-gold/15 pb-4">
+                        <div class="flex items-center gap-3 text-gold">
+                            <i class="fa-solid fa-circle-question text-xl"></i>
+                            <h3 class="font-serif text-xl font-semibold text-ivory">Mini Kuis Tentang Kita</h3>
+                        </div>
+                        <span id="quiz-step-indicator" class="text-xs font-mono text-gold/70">Pertanyaan 1 dari 4</span>
+                    </div>
+
+                    <div id="quiz-container" class="space-y-4">
+                        <!-- Questions will be rendered dynamically by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtual Hug Button -->
+            <div class="mt-12 text-center space-y-4">
+                <button onclick="sendVirtualHug()" class="px-8 py-4 rounded-full bg-gradient-to-r from-wine via-burgundy to-wine border border-gold/40 text-gold font-serif text-lg hover:scale-105 active:scale-95 transition-transform shadow-xl">
+                    <i class="fa-solid fa-hands-holding-child mr-2"></i> Kirim Peluk Virtual & Kehangatan
+                </button>
+                <p id="hug-feedback" class="text-xs font-serif text-blush opacity-0 transition-opacity duration-500">
+                    Pelukan hangat sedang dikirimkan langsung ke hatimu... ♡
+                </p>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- SECTION 9: KEJUTAN TERAKHIR & FINAL ROMANCE CHAPTER -->
+        <!-- ========================================================================= -->
+        <section id="kejutan" class="max-w-4xl mx-auto px-4 sm:px-6 pt-12">
+            <div class="glass-panel rounded-3xl p-8 sm:p-14 text-center border border-gold/30 shadow-2xl relative overflow-hidden bg-gradient-to-b from-burgundy/60 via-midnight to-midnight">
+                
+                <span class="text-xs uppercase tracking-widest text-gold font-semibold block mb-3">Puncak Cerita</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-gradient-gold mb-6">Kejutan Terakhir untuk Patem Sayangg</h2>
+                <p class="text-sm sm:text-base text-blush/90 font-serif italic max-w-lg mx-auto mb-10">
+                    Ada satu kotak hadiah digital kecil yang tersisa di sini. Sentuh untuk membukanya.
+                </p>
+
+                <!-- Interactive Gift Box Icon / Envelope -->
+                <div id="gift-box" onclick="openGiftFinale()" class="w-32 h-32 mx-auto rounded-3xl bg-gradient-to-tr from-wine to-burgundy border-2 border-gold/50 flex items-center justify-center cursor-pointer shadow-2xl hover:scale-110 transition-all duration-500 group relative">
+                    <i id="gift-icon" class="fa-solid fa-gift text-5xl text-gold group-hover:rotate-12 transition-transform"></i>
+                    <div class="absolute inset-0 rounded-3xl bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </div>
+
+                <!-- Revealed Final Letter Container -->
+                <div id="finale-letter-content" class="hidden mt-10 space-y-6 text-left border-t border-gold/20 pt-8 animate-fade-in font-serif text-base sm:text-lg text-ivory/90 leading-relaxed">
+                    <p class="text-center font-serif text-2xl text-gradient-gold italic font-bold">
+                        "Terima kasih telah membaca hingga halaman terakhir..."
+                    </p>
+                    <p>
+                        Patem Sayangg, jika kamu sudah sampai di bagian ini, aku hanya ingin menyampaikan bahwa membuat website ini hanyalah salah satu cara kecilku untuk mengabadikan rasa sayang yang besar. 
+                    </p>
+                    <p>
+                        Aku tidak berjanji bahwa masa depan kita akan selalu berjalan tanpa badai, tetapi aku berjanji akan selalu ada di sampingmu — mengusahakan tempat berlindung yang paling tenang, mendengar setiap bisikan khawatirmu, dan merayakan setiap pencapaian kecilmu.
+                    </p>
+                    <p class="italic text-blush text-center py-4 border-y border-gold/15">
+                        "Kalau nanti suatu hari kita membuka kembali halaman digital ini, semoga kita bisa tersenyum lebar mengingat betapa indahnya perjalanan awal yang pernah kita rajut bersama."
+                    </p>
+                    <div class="text-center pt-4">
+                        <p class="text-xs uppercase tracking-widest text-gold">Selamanya menyayangimu,</p>
+                        <p class="text-3xl text-gradient-gold font-bold font-serif mt-1">Aku ♡</p>
+                    </div>
+
+                    <div class="pt-8 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#hero" class="px-6 py-2.5 rounded-full border border-gold/30 text-xs uppercase tracking-wider text-gold hover:bg-wine/40 transition-colors">
+                            <i class="fa-solid fa-arrow-up mr-2"></i> Kembali ke Awal
+                        </a>
+                        <button onclick="toggleAudio()" class="px-6 py-2.5 rounded-full bg-wine/80 border border-gold/40 text-xs uppercase tracking-wider text-ivory hover:bg-wine transition-colors">
+                            <i class="fa-solid fa-compact-disc mr-2"></i> Dengarkan Lagu Lagi
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-gold/10 py-8 text-center text-xs text-ivory/40 space-y-2 font-sans">
+        <p>Dirancang & Dibuat Khusus dengan Cinta untuk Patem Sayangg</p>
+        <p class="text-gold/50">10 September 2025 — Selamanya</p>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT LOGIC & INTERACTIONS -->
+    <!-- ========================================================================= -->
+    <script>
+        // GLOBAL AUDIO CONTROLLER STATE
+        const mainAudio = document.getElementById('main-audio');
+        const navAudioBtn = document.getElementById('nav-audio-btn');
+        const navAudioIcon = document.getElementById('nav-audio-icon');
+        const navAudioText = document.getElementById('nav-audio-text');
+        const mainPlayBtn = document.getElementById('main-play-btn');
+        const mainPlayIcon = document.getElementById('main-play-icon');
+        const vinylDisk = document.getElementById('vinyl-disk');
+        const progressBar = document.getElementById('audio-progress-bar');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationTimeEl = document.getElementById('duration-time');
+        const statusMsg = document.getElementById('audio-status-msg');
+
+        let isPlaying = false;
+
+        // ENTER EXPERIENCE TRIGGER
+        function enterExperience() {
+            // Smooth scroll to Surat section
+            document.getElementById('surat').scrollIntoView({ behavior: 'smooth' });
+            
+            // Try to start music on user interaction
+            if (!isPlaying) {
+                playAudio();
+            }
+        }
+
+        // TOGGLE AUDIO PLAY/PAUSE
+        function toggleAudio() {
+            if (isPlaying) {
+                pauseAudio();
+            } else {
+                playAudio();
+            }
+        }
+
+        function playAudio() {
+            mainAudio.play().then(() => {
+                isPlaying = true;
+                updateAudioUI(true);
+            }).catch(err => {
+                console.log("Audio play error:", err);
+                statusMsg.innerText = "File audio tidak dapat dimuat otomatis (Cek koneksi/file).";
+            });
+        }
+
+        function pauseAudio() {
+            mainAudio.pause();
+            isPlaying = false;
+            updateAudioUI(false);
+        }
+
+        function updateAudioUI(playing) {
+            if (playing) {
+                navAudioIcon.className = "fa-solid fa-pause text-gold";
+                navAudioText.innerText = "Jeda Musik";
+                mainPlayIcon.className = "fa-solid fa-pause";
+                vinylDisk.classList.add('animate-spin-slow');
+                statusMsg.innerText = "Sedang Memutar: Sal Priadi — Kita Usahakan Rumah Itu";
+            } else {
+                navAudioIcon.className = "fa-solid fa-music";
+                navAudioText.innerText = "Putar Musik";
+                mainPlayIcon.className = "fa-solid fa-play";
+                vinylDisk.classList.remove('animate-spin-slow');
+                statusMsg.innerText = "Musik Dihentikan. Klik play untuk memutar.";
+            }
+        }
+
+        // AUDIO TIME UPDATES
+        mainAudio.ontimeupdate = function() {
+            if (mainAudio.duration) {
+                const pct = (mainAudio.currentTime / mainAudio.duration) * 100;
+                progressBar.style.width = pct + "%";
+                
+                currentTimeEl.innerText = formatTime(mainAudio.currentTime);
+                durationTimeEl.innerText = formatTime(mainAudio.duration);
+            }
+        };
+
+        function seekAudio(e) {
+            const container = document.getElementById('progress-container');
+            const rect = container.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            if (mainAudio.duration) {
+                mainAudio.currentTime = (clickX / width) * mainAudio.duration;
+            }
+        }
+
+        function rewindAudio() {
+            mainAudio.currentTime = 0;
+        }
+
+        function forwardAudio() {
+            mainAudio.currentTime = Math.min(mainAudio.currentTime + 10, mainAudio.duration || 0);
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // LIVE RELATIONSHIP TIMER SINCE SEPTEMBER 10, 2025
+        const startDate = new Date('2025-09-10T00:00:00');
+
+        function updateLiveCounter() {
+            const now = new Date();
+            const diff = now - startDate;
+
+            if (diff < 0) {
+                document.getElementById('counter-days').innerText = "00";
+                document.getElementById('counter-hours').innerText = "00";
+                document.getElementById('counter-minutes').innerText = "00";
+                document.getElementById('counter-seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('counter-days').innerText = days;
+            document.getElementById('counter-hours').innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById('counter-minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('counter-seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateLiveCounter, 1000);
+        updateLiveCounter();
+
+        // NAVBAR SCROLL REVEAL & PROGRESS
+        window.onscroll = function() {
+            const navbar = document.getElementById('navbar');
+            const scrollProgress = document.getElementById('scroll-progress');
+            
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            
+            scrollProgress.style.width = scrolled + "%";
+
+            if (winScroll > 100) {
+                navbar.classList.remove('-translate-y-full');
+            } else {
+                navbar.classList.add('-translate-y-full');
+            }
+        };
+
+        // MOBILE MENU TOGGLE
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // LIGHTBOX FUNCTIONS
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+
+            img.src = src;
+            cap.innerText = caption;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // TOGGLE EXTRA REASONS
+        let reasonsExpanded = false;
+        function toggleReasons() {
+            const moreElements = document.querySelectorAll('.more-reasons');
+            const icon = document.getElementById('toggle-reasons-icon');
+            const btnText = document.querySelector('#toggle-reasons-btn span');
+
+            moreElements.forEach(el => el.classList.toggle('hidden'));
+
+            reasonsExpanded = !reasonsExpanded;
+            if (reasonsExpanded) {
+                btnText.innerText = "Sembunyikan Sebagian Alasan";
+                icon.className = "fa-solid fa-chevron-up text-xs";
+            } else {
+                btnText.innerText = "Masak Ada Alasan Lainnya";
+                icon.className = "fa-solid fa-chevron-down text-xs";
+            }
+        }
+
+        // DAILY MESSAGE GENERATOR
+        const dailyMessages = [
+            "Terima kasih sudah bertahan dan berjuang hari ini. Kamu hebat banget!",
+            "Jangan lupa minum air putih dan istirahat yang cukup ya, Patem Sayangg.",
+            "Ingat, kamu selalu punya tempat pulang di dalam hati aku.",
+            "Senyum kamu adalah hal paling manis yang pernah aku temukan.",
+            "Apapun yang bikin kamu pusing hari ini, kita selesaikan perlahan bersama.",
+            "Aku bersyukur banget bisa kenal dan memiliki kamu dalam hidup aku."
+        ];
+
+        function generateDailyMessage() {
+            const box = document.getElementById('daily-message-box');
+            const randomIndex = Math.floor(Math.random() * dailyMessages.length);
+            box.style.opacity = '0';
+            setTimeout(() => {
+                box.innerText = `"${dailyMessages[randomIndex]}"`;
+                box.style.opacity = '1';
+            }, 200);
+        }
+
+        // MOOD PICKER RESPONSE
+        const moodResponses = {
+            'bahagia': "Ikut senang mendengarnya! Semoga kebahagiaan ini bertahan lama di hatimu hari ini. 😊",
+            'lelah': "Istirahat dulu ya... Jangan terlalu memaksakan diri. Kamu sudah berusaha sangat baik hari ini. 😴",
+            'rindu': "Aku juga rindu banget... Nanti kalau ada waktu, kita cerita-cerita lagi ya. 🥺",
+            'sedih': "Sini, tidak apa-apa kalau mau sedih sejenak. Kamu tidak sendirian, ada aku di sini. 🌧️",
+            'semangat': "Luar biasa! Semangat terus ya mengejar hal-hal yang kamu impikan! 🔥",
+            'butuh-peluk': "Kirimkan pelukan paling hangat dan erat khusus untuk kamu sekarang! 🤗"
+        };
+
+        function setMood(moodKey) {
+            const box = document.getElementById('mood-response-box');
+            box.innerText = moodResponses[moodKey] || "Selalu ada sayang untuk kamu.";
+        }
+
+        // MINI ROMANTIC QUIZ LOGIC
+        const quizData = [
+            {
+                q: "Tanggal berapa perjalanan cerita kita pertama kali dimulai?",
+                options: ["10 Agustus 2025", "10 September 2025", "10 Oktober 2025", "10 November 2025"],
+                correct: 1
+            },
+            {
+                q: "Lagu apa yang menjadi soundtrack utama rumah kita?",
+                options: ["Sal Priadi — Kita Usahakan Rumah Itu", "Nadin Amizah — Bertaut", "Tulus — Monokrom", "Pamungkas — To The Bone"],
+                correct: 0
+            },
+            {
+                q: "Apa hal yang paling penting bagi kita dalam menjaga hubungan ini?",
+                options: ["Gengsi yang tinggi", "Komunikasi jujur & rasa saling percaya", "Selalu setuju tanpa debat", "Pura-pura tidak ada masalah"],
+                correct: 1
+            },
+            {
+                q: "Siapa yang selalu menyayangi Patem Sayangg setiap hari?",
+                options: ["Aku", "Aku banget", "Pasti Aku", "Semua jawaban benar ♡"],
+                correct: 3
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let score = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            const indicator = document.getElementById('quiz-step-indicator');
+
+            if (currentQuizIndex >= quizData.length) {
+                container.innerHTML = `
+                    <div class="text-center py-6 space-y-3">
+                        <i class="fa-solid fa-award text-4xl text-gold"></i>
+                        <h4 class="font-serif text-2xl text-gradient-gold">Kuis Selesai!</h4>
+                        <p class="text-sm text-ivory/80">Skor kamu: <span class="text-gold font-bold">${score} / ${quizData.length}</span>. Kamu memang luar biasa!</p>
+                        <button onclick="resetQuiz()" class="mt-4 px-6 py-2 rounded-full border border-gold/30 text-xs text-gold hover:bg-wine/40">Ulangi Kuis</button>
+                    </div>
+                `;
+                indicator.innerText = "Selesai";
+                return;
+            }
+
+            const item = quizData[currentQuizIndex];
+            indicator.innerText = `Pertanyaan ${currentQuizIndex + 1} dari ${quizData.length}`;
+
+            let optionsHTML = '';
+            item.options.forEach((opt, idx) => {
+                optionsHTML += `
+                    <button onclick="answerQuiz(${idx})" class="w-full text-left p-3.5 rounded-xl glass-panel border border-gold/20 hover:border-gold hover:bg-wine/30 text-sm text-ivory/90 transition-all">
+                        ${opt}
+                    </button>
+                `;
+            });
+
+            container.innerHTML = `
+                <div class="space-y-4">
+                    <p class="font-serif text-base sm:text-lg text-goldlight">${item.q}</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        ${optionsHTML}
+                    </div>
+                </div>
+            `;
+        }
+
+        function answerQuiz(selectedIndex) {
+            const item = quizData[currentQuizIndex];
+            if (selectedIndex === item.correct || item.correct === 3) {
+                score++;
+            }
+            currentQuizIndex++;
+            renderQuiz();
+        }
+
+        function resetQuiz() {
+            currentQuizIndex = 0;
+            score = 0;
+            renderQuiz();
+        }
+
+        renderQuiz();
+
+        // VIRTUAL HUG BUTTON
+        function sendVirtualHug() {
+            const feedback = document.getElementById('hug-feedback');
+            feedback.style.opacity = '1';
+            setTimeout(() => {
+                feedback.style.opacity = '0';
+            }, 3000);
+        }
+
+        // FINALE GIFT BOX OPENING
+        function openGiftFinale() {
+            const icon = document.getElementById('gift-icon');
+            const letter = document.getElementById('finale-letter-content');
+
+            icon.className = "fa-solid fa-box-open text-5xl text-goldlight";
+            letter.classList.remove('hidden');
+
+            // Scroll down smoothly to finale text
+            setTimeout(() => {
+                letter.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+        }
+
+        // BACKGROUND PARTICLES CANVAS ANIMATION
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.3;
+                this.speedY = -Math.random() * 0.4 - 0.1;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                if (this.y < 0) {
+                    this.y = canvas.height;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const count = Math.min(Math.floor(window.innerWidth / 20), 50);
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+    </script>
+</body>
+</html>
